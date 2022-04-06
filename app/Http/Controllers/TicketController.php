@@ -153,7 +153,7 @@ class TicketController extends Controller
         $found_ticket = Ticket::where('uuid', $uuid)->firstOrFail();
         $found_ticket->status = 'completed';
         $found_ticket->save();
-//        $found_ticket->notify(new TicketReserved($found_ticket));
+        $found_ticket->notify(new TicketReserved($found_ticket));
         return view('tickets_success')->with(["ticket" => $found_ticket]);
     }
 }
