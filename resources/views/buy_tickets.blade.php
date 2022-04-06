@@ -41,9 +41,12 @@
         <p>
             We are launching a website, and that is so cool that we are throwing a party for it.
         </p>
-        <p>
-            <img src="./assets/mrticketreadytorockatcojz9.gif" alt="">
-        </p>
+        <div class="flex">
+            <img src="./assets/gdance.gif" alt="">
+            <img src="./assets/gdance.gif" alt="">
+            <img src="./assets/gdance.gif" alt="">
+            <img src="./assets/gdance.gif" alt="">
+        </div>
     </div>
 </div>
 
