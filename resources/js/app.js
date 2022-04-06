@@ -13,7 +13,9 @@ let ticketNames = [
     'calnightticket.gif',
     'tickets.gif',
     '2ticketsbear.gif',
-    // 'mrticketreadytorockatcojz9.gif'
+    'gdance.gif',
+    'yay1.gif',
+    'yayb.gif'
 
 ]
 
