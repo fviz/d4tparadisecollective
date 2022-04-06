@@ -99,9 +99,11 @@ class TicketController extends Controller
         $new_ticket = new Ticket();
         $new_ticket->client_email = $client_email;
         $new_ticket->amount = $amount_of_tickets;
-        $new_ticket->price = $price_per_ticket;
+        $new_ticket->price = floatval(str_replace(',', '.', str_replace('.', '', $request->price)));;
         $new_ticket->uuid = \Ramsey\Uuid\Uuid::uuid4();
         $new_ticket->status = 'processing_payment';
+
+        return $new_ticket->price;
 
 
         if ($request->payment_choice == 'free') {
