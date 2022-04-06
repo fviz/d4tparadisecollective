@@ -32,7 +32,7 @@ return [
     ],
 
     'discord' => [
-        'token' => 'OTYxMzU5MTY4OTYxNDEzMTcw.Yk31fw.RmIgpyUmDXUxX_se2oBTD144pEQ',
+        'token' => env("DISCORD_TOKEN"),
     ],
 
 ];
