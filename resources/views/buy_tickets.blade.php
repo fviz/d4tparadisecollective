@@ -63,7 +63,7 @@
     </div>
 </div>
 
-<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 310px; left: 250px;">
+<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 310px; left: 290px;">
     <div class="flex justify-between items-center bg-pink-600 text-white px-1">
         <span>
         HOW MUCH
@@ -84,7 +84,7 @@
     </div>
 </div>
 
-<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 310px; left: 250px;">
+<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 410px;">
     <div class="flex justify-between items-center bg-pink-600 text-white px-1">
         <span>
         GET TICKETS NOW
