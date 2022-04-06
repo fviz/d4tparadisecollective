@@ -103,6 +103,7 @@ class TicketController extends Controller
         $new_ticket->uuid = \Ramsey\Uuid\Uuid::uuid4();
         $new_ticket->status = 'processing_payment';
 
+
         if ($request->payment_choice == 'free') {
             if (is_null($new_ticket->price)) {
                 $new_ticket->price = 0;
