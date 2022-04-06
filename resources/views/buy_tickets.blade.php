@@ -94,11 +94,12 @@
         </div>
     </div>
     <div class="p-2">
-        <form action="" x-data="{ priceFieldVisible: false}">
+        <form action="/get_tickets" x-data="{ priceFieldVisible: false}" method="post">
+            @csrf
             <label for="amount">How many tickets?</label>
             <div class="relative">
-                <input type="number" id="amount" name="amount" class="border w-full px-1">
-                <div class="absolute right-1 top-0 h-full text-gray-800 w-4 flex items-center">
+                <input type="number" id="amount" name="amount" class="border w-full pl-6" max="8" min="1" required>
+                <div class="absolute left-1 top-0 h-full text-gray-800 w-4 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
@@ -106,19 +107,19 @@
             </div>
             <span>How much would you like to pay?</span>
             <div>
-                <input type="radio" id="free" name="payment_choice" value="free" x-model="priceFieldVisible">
+                <input type="radio" id="free" name="payment_choice" value="free" x-model="priceFieldVisible" required>
                 <label for="free">Go for free</label>
             </div>
             <div>
-                <input type="radio" id="name_your_price" name="payment_choice" value="name_your_price" x-model="priceFieldVisible" >
+                <input type="radio" id="name_your_price" name="payment_choice" value="name_your_price" x-model="priceFieldVisible" required>
                 <label for="name_your_price">Name your price</label>
             </div>
             <template x-if="priceFieldVisible=='name_your_price'">
                 <div>
                     <label for="price">Price</label>
                     <div class="relative">
-                        <input type="text" id="price" name="price" class="border w-full px-1">
-                        <div class="absolute right-2 top-0 text-gray-500">
+                        <input type="text" id="price" name="price" class="border w-full px-1 pl-6" required>
+                        <div class="absolute left-1 top-0 h-full text-gray-400 w-4 flex items-center">
                             €
                         </div>
                     </div>
@@ -127,7 +128,7 @@
             </template>
 
             <div>
-                <button class="button w-full mt-2">Buy now</button>
+                <button class="button w-full mt-2">Get tickets now</button>
             </div>
         </form>
     </div>
