@@ -57,13 +57,13 @@
     <div class="p-2">
         <p>
             Date: 22/04/2022 <br>
-            Time: 20:00 – 03:00+ <br>
-            Location: <a href="#" class="underline text-blue-800">Onderlands 9, Arnhem</a>
+            Time: 20:30 – 03:00 <br>
+            Location: <a target="_blank" href="https://www.google.com/maps/place/Nieuwe+Kade+2,+6827+AA+Arnhem/@51.9744238,5.91285,17z/data=!3m1!4b1!4m5!3m4!1s0x47c7a43472545eef:0x878b65d83a13c83b!8m2!3d51.9744238!4d5.9150387" class="underline text-blue-800">Nieuwe Kade 2, Arnhem</a> <span class="text-sm">(click for Google Maps)</span>
         </p>
     </div>
 </div>
 
-<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 310px; left: 290px;">
+<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 340px; left: 290px;">
     <div class="flex justify-between items-center bg-pink-600 text-white px-1">
         <span>
         HOW MUCH
@@ -96,6 +96,12 @@
     <div class="p-2">
         <form action="/get_tickets" x-data="{ priceFieldVisible: false}" method="post">
             @csrf
+            <label for="amount">What is your email?</label>
+            <div class="relative">
+                <input type="email" id="email" name="email" class="border w-full px-1" required>
+                <div class="absolute left-1 top-0 h-full text-gray-800 w-4 flex items-center">
+                </div>
+            </div>
             <label for="amount">How many tickets?</label>
             <div class="relative">
                 <input type="number" id="amount" name="amount" class="border w-full pl-6" max="8" min="1" required>
@@ -116,7 +122,7 @@
             </div>
             <template x-if="priceFieldVisible=='name_your_price'">
                 <div>
-                    <label for="price">Price</label>
+                    <label for="price">Price per ticket</label>
                     <div class="relative">
                         <input type="text" id="price" name="price" class="border w-full px-1 pl-6" required>
                         <div class="absolute left-1 top-0 h-full text-gray-400 w-4 flex items-center">

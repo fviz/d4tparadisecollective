@@ -89,10 +89,13 @@ class TicketController extends Controller
     public function get_tickets(Request $request)
     {
 
-//        return $request->all();
+        if ($request->payment_choice == 'free') {
+            return redirect('/tickets_success');
+        }
         \Stripe\Stripe::setApiKey(env("STRIPE_SK_KEY"));
 
         $session = \Stripe\Checkout\Session::create([
+            'customer_email' => $request->email,
             'line_items' => [[
                 'price_data' => [
                     'currency' => 'eur',
