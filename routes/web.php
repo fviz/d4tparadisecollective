@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/webshop', function () {
 
     $stripe = new \Stripe\StripeClient(env("STRIPE_SK_KEY"));
     $products = $stripe->products->all(['limit' => 3]);
@@ -26,3 +27,6 @@ Route::get('/', function () {
         "products" => $products
     ]);
 });
+
+Route::get('/', [PageController::class, 'homepage']);
+Route::get('/buy', [PageController::class, 'buy_tickets']);
