@@ -37,7 +37,7 @@
     </div>
     <div class="p-2">
         <p>
-            Success! Thank you for reserving your tickets. We will send you a confirmation email.
+            Success! Thank you for reserving your tickets. We will send a confirmation email to {{$ticket->client_email}}.
         </p>
         <p>
             <img src="./assets/mrticketreadytorockatcojz9.gif" alt="">

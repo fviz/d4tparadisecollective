@@ -26,7 +26,7 @@
 <body
     style="background-image: url('/assets/wp.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; min-height: 100vh">
 
-<div class="m-8 md:top-10 md:left-10 md:fixed md:w-64 md:h-90 bg-white border">
+<div class="m-8 md:top-2 md:left-2 md:fixed md:w-64 md:h-90 bg-white border">
     <div class="flex justify-between items-center bg-pink-600 text-white px-1">
         <span>
         WHAT
@@ -45,7 +45,7 @@
     </div>
 </div>
 
-<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 190px; left: 250px;">
+<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 380px;">
     <div class="flex justify-between items-center bg-pink-600 text-white px-1">
         <span>
         WHEN & WHERE
@@ -84,7 +84,7 @@
     </div>
 </div>
 
-<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 410px;">
+<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 20px; left: 280px;">
     <div class="flex justify-between items-center bg-pink-600 text-white px-1">
         <span>
         GET TICKETS NOW

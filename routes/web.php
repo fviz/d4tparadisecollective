@@ -32,5 +32,5 @@ Route::get('/webshop', function () {
 Route::get('/', [PageController::class, 'homepage']);
 Route::get('/buy', [PageController::class, 'buy_tickets']);
 Route::post('/get_tickets', [TicketController::class, 'get_tickets']);
-Route::get('/tickets_success', [PageController::class, 'tickets_success']);
+Route::get('/tickets_success', [TicketController::class, 'tickets_success']);
 Route::get('/tickets_cancel', [PageController::class, 'homepage']);

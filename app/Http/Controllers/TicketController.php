@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\URL;
 
 class TicketController extends Controller
 {
+    public function __construct() {
+        \Stripe\Stripe::setApiKey(env('STRIPE_SK_KEY'));
+    }
     /**
      * Display a listing of the resource.
      *
@@ -89,30 +92,64 @@ class TicketController extends Controller
     public function get_tickets(Request $request)
     {
 
+        $client_email = $request->email;
+        $amount_of_tickets = $request->amount;
+        $price_per_ticket = $request->price;
+
+        $new_ticket = new Ticket();
+        $new_ticket->client_email = $client_email;
+        $new_ticket->amount = $amount_of_tickets;
+        $new_ticket->price = $price_per_ticket;
+        $new_ticket->uuid = \Ramsey\Uuid\Uuid::uuid4();
+
         if ($request->payment_choice == 'free') {
-            return redirect('/tickets_success');
+            if (is_null($new_ticket->price)) {
+                $new_ticket->price = 0;
+            }
+            $new_ticket->save();
+            return redirect()->to(URL::to('/') . "/tickets_success?uuid=" . $new_ticket->uuid);
+        } else {
+            $new_ticket->status = 'processing_payment';
+            $new_ticket->save();
         }
+
         \Stripe\Stripe::setApiKey(env("STRIPE_SK_KEY"));
 
         $session = \Stripe\Checkout\Session::create([
-            'customer_email' => $request->email,
+            'customer_email' => $client_email,
+            'metadata' => [
+                "uuid" => $new_ticket->uuid
+            ],
             'line_items' => [[
                 'price_data' => [
                     'currency' => 'eur',
                     'product_data' => [
                         'name' => 'Launch Party Tickets',
                     ],
-                    'unit_amount' => $request->price * 100,
+                    'unit_amount' => $price_per_ticket * 100,
                 ],
-                'quantity' => $request->amount,
+                'quantity' => $amount_of_tickets,
             ]],
             'mode' => 'payment',
-            'success_url' => URL::to('/') . "/tickets_success",
+            'success_url' => URL::to('/') . "/tickets_success?session_id={CHECKOUT_SESSION_ID}",
             'cancel_url' => URL::to('/') . "/tickets_cancel",
         ]);
 
         return redirect($session->url, 303);
 
 
+    }
+
+    public function tickets_success(Request $request) {
+        $uuid = $request->uuid;
+
+        if (is_null($uuid)) {
+            $session = \Stripe\Checkout\Session::retrieve($request->get('session_id'));
+            $uuid = $session->metadata["uuid"];
+        }
+
+        $found_ticket = Ticket::where('uuid', $uuid)->firstOrFail();
+        $found_ticket->status = 'completed';
+        return view('tickets_success')->with(["ticket" => $found_ticket]);
     }
 }

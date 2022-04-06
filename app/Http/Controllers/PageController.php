@@ -14,9 +14,4 @@ class PageController extends Controller
     public function buy_tickets() {
         return view('buy_tickets');
     }
-
-    public function tickets_success() {
-        return view('tickets_success');
-
-    }
 }
