@@ -101,6 +101,8 @@ class TicketController extends Controller
         $new_ticket->amount = $amount_of_tickets;
         $new_ticket->price = $price_per_ticket;
         $new_ticket->uuid = \Ramsey\Uuid\Uuid::uuid4();
+        $new_ticket->status = 'processing_payment';
+
 
         if ($request->payment_choice == 'free') {
             if (is_null($new_ticket->price)) {
@@ -109,7 +111,6 @@ class TicketController extends Controller
             $new_ticket->save();
             return redirect()->to(URL::to('/') . "/tickets_success?uuid=" . $new_ticket->uuid);
         } else {
-            $new_ticket->status = 'processing_payment';
             $new_ticket->save();
         }
 
