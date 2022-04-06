@@ -32,7 +32,9 @@
         WHAT
         </span>
         <div class="text-center">
-            <img src="./assets/close.gif" alt="">
+            <a href="/">
+                <img src="./assets/close.gif" alt="">
+            </a>
         </div>
     </div>
     <div class="p-2">
@@ -51,7 +53,9 @@
         WHEN & WHERE
         </span>
         <div>
-            <img src="./assets/close.gif" alt="">
+            <a href="/">
+                <img src="./assets/close.gif" alt="">
+            </a>
         </div>
     </div>
     <div class="p-2">
@@ -69,8 +73,9 @@
         HOW MUCH
         </span>
         <div>
-            <img src="./assets/close.gif" alt="">
-        </div>
+            <a href="/">
+                <img src="./assets/close.gif" alt="">
+            </a>        </div>
     </div>
     <div class="p-2">
         <p>
@@ -90,7 +95,9 @@
         GET TICKETS NOW
         </span>
         <div>
-            <img src="./assets/close.gif" alt="">
+            <a href="/">
+                <img src="./assets/close.gif" alt="">
+            </a>
         </div>
     </div>
     <div class="p-2">

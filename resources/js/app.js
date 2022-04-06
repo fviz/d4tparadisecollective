@@ -78,11 +78,11 @@ class Popup {
                 <span>
                 ${this.title}
                 </span>
-                <div>
+                <div class="closeButton">
                     <img src="./assets/close.gif" alt="">
                 </div>
             </div>
-            <img style="width: 100%" src="./assets/${this.image}" alt="">
+            <img style="width: 100%" src="./assets/${this.image}" alt="" class="gif">
         </div>
 
         `
@@ -92,14 +92,22 @@ class Popup {
     addToBody() {
         let newDiv = document.createElement('div');
         newDiv.innerHTML = this.html;
-        newDiv.addEventListener('click', window.closeAll);
+        let closeButton = newDiv.querySelector('.closeButton');
+        let gif = newDiv.querySelector('.gif');
+        gif.addEventListener('click', window.closeAll);
+        closeButton.addEventListener('click', this.close);
         document.body.appendChild(newDiv);
         this.element = newDiv;
         window.popups.push(this);
     }
 
-    close() {
-        this.element.remove();
+    close(event) {
+        if (event) {
+            event.target.parentElement.parentElement.parentElement.remove();
+
+        } else {
+            this.element.remove();
+        }
     }
 
 }
