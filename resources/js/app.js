@@ -63,9 +63,9 @@ class Popup {
         this.image = ticketNames[Math.floor(Math.random() * ticketNames.length)];
         this.color = colorNames[Math.floor(Math.random() * colorNames.length)];
         this.title = titles[Math.floor(Math.random() * titles.length)];
-        this.x = Math.random() * window.innerWidth;
-        this.y = Math.random() * window.innerHeight;
         this.width = (Math.random() * 180) + 120;
+        this.x = Math.random() * window.innerWidth - this.width;
+        this.y = Math.random() * window.innerHeight;
         this.html = this.makeElement();
         this.addToBody();
     }
