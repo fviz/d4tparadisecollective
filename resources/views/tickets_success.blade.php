@@ -32,7 +32,9 @@
         THANK YOU
         </span>
         <div class="text-center">
-            <img src="./assets/close.gif" alt="">
+            <a href="/">
+                <img src="./assets/close.gif" alt="">
+            </a>
         </div>
     </div>
     <div class="p-2">

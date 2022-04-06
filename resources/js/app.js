@@ -55,7 +55,7 @@ window.closeAll = function() {
     }
     setTimeout(function() {
         window.location.href = 'buy';
-    }, closingLength + 200)
+    }, closingLength - 300)
 }
 
 class Popup {

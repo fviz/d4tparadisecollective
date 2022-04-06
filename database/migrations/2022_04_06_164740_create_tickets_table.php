@@ -20,6 +20,7 @@ return new class extends Migration
             $table->float('price');
             $table->string('client_email');
             $table->uuid('uuid');
+            $table->string("channel_id")->default('961361699326292028');
             $table->timestamps();
         });
     }
