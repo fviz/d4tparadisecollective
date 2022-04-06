@@ -150,6 +150,7 @@ class TicketController extends Controller
 
         $found_ticket = Ticket::where('uuid', $uuid)->firstOrFail();
         $found_ticket->status = 'completed';
+        $found_ticket->save();
         return view('tickets_success')->with(["ticket" => $found_ticket]);
     }
 }
