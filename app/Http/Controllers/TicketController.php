@@ -95,7 +95,7 @@ class TicketController extends Controller
 
         $client_email = $request->email;
         $amount_of_tickets = $request->amount;
-        $price_per_ticket = floatval(str_replace(',', '.', str_replace('.', '', $request->price)));
+        $price_per_ticket = floatval(str_replace(',', '.', $request->price));
 
         $new_ticket = new Ticket();
         $new_ticket->client_email = $client_email;
@@ -105,7 +105,7 @@ class TicketController extends Controller
         $new_ticket->status = 'processing_payment';
 
 
-        if ($request->payment_choice == 'free') {
+        if ($request->payment_choice == 'free' || $price_per_ticket == 0) {
             if (is_null($new_ticket->price)) {
                 $new_ticket->price = 0;
             }
@@ -153,8 +153,7 @@ class TicketController extends Controller
         $found_ticket = Ticket::where('uuid', $uuid)->firstOrFail();
         $found_ticket->status = 'completed';
         $found_ticket->save();
-        $found_ticket->notify(new TicketReserved($found_ticket));
-//        $found_ticket->notifyDiscord();
+//        $found_ticket->notify(new TicketReserved($found_ticket));
         return view('tickets_success')->with(["ticket" => $found_ticket]);
     }
 }
