@@ -152,7 +152,10 @@ class TicketController extends Controller
         }
 
         $found_ticket = Ticket::where('uuid', $uuid)->firstOrFail();
-        if (!$found_ticket->status == 'completed') {
+        Log::info($found_ticket);
+        if ($found_ticket->status == 'completed') {
+            return view('tickets_success')->with(["ticket" => $found_ticket]);
+        } else {
             Log::info("Confirming ticket:");
             Log::info($found_ticket);
             $found_ticket->status = 'completed';
