@@ -47,30 +47,17 @@
             <img src="./assets/gdance.gif" alt="">
             <img src="./assets/gdance.gif" alt="">
         </div>
-    </div>
-</div>
-
-<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 380px;">
-    <div class="flex justify-between items-center bg-pink-600 text-white px-1">
-        <span>
-        WHEN & WHERE
-        </span>
-        <div>
-            <a href="/">
-                <img src="./assets/close.gif" alt="">
-            </a>
-        </div>
-    </div>
-    <div class="p-2">
         <p>
             Date: 22/04/2022 <br>
             Time: 20:30 – 03:00 <br>
-            Location: <a target="_blank" href="https://www.google.com/maps/place/Nieuwe+Kade+2,+6827+AA+Arnhem/@51.9744238,5.91285,17z/data=!3m1!4b1!4m5!3m4!1s0x47c7a43472545eef:0x878b65d83a13c83b!8m2!3d51.9744238!4d5.9150387" class="underline text-blue-800">Nieuwe Kade 2, Arnhem</a> <span class="text-sm">(click for Google Maps)</span>
+            Location: <a target="_blank"
+                         href="https://www.google.com/maps/place/Nieuwe+Kade+2,+6827+AA+Arnhem/@51.9744238,5.91285,17z/data=!3m1!4b1!4m5!3m4!1s0x47c7a43472545eef:0x878b65d83a13c83b!8m2!3d51.9744238!4d5.9150387"
+                         class="underline text-blue-800">Nieuwe Kade 2, Arnhem</a> <span class="text-sm">(click for Google Maps)</span>
         </p>
     </div>
 </div>
 
-<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 340px; left: 290px;">
+<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 368px; left: 0.5rem;">
     <div class="flex justify-between items-center bg-pink-600 text-white px-1">
         <span>
         HOW MUCH
@@ -78,21 +65,22 @@
         <div>
             <a href="/">
                 <img src="./assets/close.gif" alt="">
-            </a>        </div>
+            </a></div>
     </div>
     <div class="p-2">
         <p>
             Name your own price, starting at €0 :}
         </p>
         <p class="text-sm">
-            If you choose to pay, you can do it with iDeal or with a credit card. If you'd like to pay in cash, <a class="text-blue-600 underline"
+            If you choose to pay, you can do it with iDeal or with a credit card. If you'd like to pay in cash, <a
+                class="text-blue-600 underline"
                 href="mailto:BVAMD4@artez.nl">send us a message</a> and we will arrange something.<br>
         </p>
 
     </div>
 </div>
 
-<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 20px; left: 280px;">
+<div class="m-8 md:fixed md:w-64 md:h-90 bg-white border" style="top: 120px; left: 280px;">
     <div class="flex justify-between items-center bg-pink-600 text-white px-1">
         <span>
         GET TICKETS NOW
@@ -116,8 +104,10 @@
             <div class="relative">
                 <input type="number" id="amount" name="amount" class="border w-full pl-6" max="8" min="1" required>
                 <div class="absolute left-1 top-0 h-full text-gray-800 w-4 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round"
+                              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                     </svg>
                 </div>
             </div>
@@ -127,7 +117,8 @@
                 <label for="free">Go for free</label>
             </div>
             <div>
-                <input type="radio" id="name_your_price" name="payment_choice" value="name_your_price" x-model="priceFieldVisible" required>
+                <input type="radio" id="name_your_price" name="payment_choice" value="name_your_price"
+                       x-model="priceFieldVisible" required>
                 <label for="name_your_price">Name your price</label>
             </div>
             <template x-if="priceFieldVisible=='name_your_price'">
@@ -146,6 +137,18 @@
             <div>
                 <button class="button w-full mt-2">Get tickets now</button>
             </div>
+            <hr class="mt-4">
+            <div class="flex mt-2 justify-between items-center mt-4">
+                <div class="flex items-center">
+                    <img src="/assets/ideal-logo-1024.png" class="h-8 mr-2" alt="">
+                    <img src="/assets/credit-card.png" class="h-7" alt="">
+                </div>
+                <a href="https://stripe.com/en-gb-nl" target="_blank">
+                    <img src="/assets/stripe.svg" class="h-6" alt="">
+
+                </a>
+            </div>
+
         </form>
     </div>
 </div>
