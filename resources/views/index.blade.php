@@ -46,7 +46,9 @@
         <p>
             Name your own price for the ticket, starting at €0.
         </p>
+        <p class="mt-2">
             🌴🍸 From 11 PM on 22 of April you have the oportunity of buying our beautiful and amazing USB Fire Places, Sticker Albums, Anime Girl Candles, Tattoos, Cards, Clouds, Mixtapes, Desks and Chocolates.. All to support our Graduation or just because you really like our art 🤑
+
         </p>
 
 
