@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateTicketRequest;
 use App\Models\Ticket;
 use App\Notifications\TicketReserved;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\URL;
 
 class TicketController extends Controller
@@ -152,6 +153,8 @@ class TicketController extends Controller
 
         $found_ticket = Ticket::where('uuid', $uuid)->firstOrFail();
         if (!$found_ticket->status == 'completed') {
+            Log::info("Confirming ticket:");
+            Log::info($found_ticket);
             $found_ticket->status = 'completed';
             $found_ticket->save();
             if (env("DISCORD_ENABLED")) {
