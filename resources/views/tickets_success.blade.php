@@ -41,9 +41,12 @@
         <p>
             Success! Thank you for reserving your tickets. We will send a confirmation email to {{$ticket->client_email}}.
         </p>
-        <p>
-            <img src="./assets/mrticketreadytorockatcojz9.gif" alt="">
-        </p>
+        <div class="flex">
+            <img src="./assets/gdance.gif" alt="">
+            <img src="./assets/gdance.gif" alt="">
+            <img src="./assets/gdance.gif" alt="">
+            <img src="./assets/gdance.gif" alt="">
+        </div>
     </div>
 </div>
 
