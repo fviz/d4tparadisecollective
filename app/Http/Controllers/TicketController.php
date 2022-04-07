@@ -96,6 +96,9 @@ class TicketController extends Controller
 
         $client_email = $request->email;
         $amount_of_tickets = $request->amount;
+        if ($amount_of_tickets > 8) {
+            return redirect("/buy");
+        }
         $price_per_ticket = floatval(str_replace(',', '.', $request->price));
 
         $new_ticket = new Ticket();
