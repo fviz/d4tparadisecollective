@@ -96,10 +96,16 @@ class TicketController extends Controller
 
         $client_email = $request->email;
         $amount_of_tickets = $request->amount;
-        if ($amount_of_tickets > 8) {
-            return redirect("/buy");
-        }
+
         $price_per_ticket = floatval(str_replace(',', '.', $request->price));
+
+        if ($amount_of_tickets > 8) {
+            return redirect("/buy")->with('error', "That's too many tickets.");
+        }
+
+        if ($price_per_ticket * $amount_of_tickets < 0.30) {
+            return redirect("/buy")->with('error', 'Due to the fees charged by Stripe, we ask that you pay at least 30 cents. Sorry :{');
+        }
 
         $new_ticket = new Ticket();
         $new_ticket->client_email = $client_email;

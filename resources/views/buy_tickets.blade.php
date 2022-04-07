@@ -91,6 +91,11 @@
             </a>
         </div>
     </div>
+    @if (session()->get('error'))
+    <div class="m-2 border border-yellow-700 rounded text-xs p-2 bg-yellow-100">
+        {!! session()->get('error') !!}
+    </div>
+    @endif
     <div class="p-2">
         <form action="/get_tickets" x-data="{ priceFieldVisible: false}" method="post">
             @csrf
