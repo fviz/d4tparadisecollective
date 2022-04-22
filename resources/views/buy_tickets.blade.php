@@ -50,9 +50,7 @@
         <p>
             Date: TBD <br>
             Time: TBD <br>
-            Location: <a target="_blank"
-                         href="https://www.google.com/maps/place/Nieuwe+Kade+2,+6827+AA+Arnhem/@51.9744238,5.91285,17z/data=!3m1!4b1!4m5!3m4!1s0x47c7a43472545eef:0x878b65d83a13c83b!8m2!3d51.9744238!4d5.9150387"
-                         class="underline text-blue-800">TBD</a> <span class="text-sm">(click for Google Maps)</span>
+            Location: TBD
         </p>
     </div>
 </div>
