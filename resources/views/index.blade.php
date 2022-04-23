@@ -37,11 +37,11 @@
         <p>
             🏝🖥 LAUNCH PARTY 🖥🏝 <br>
             <br>
-            🎠 Party Date: 22 April 🎠 <br>
-            🕤 Start: 8:30 PM 🕤 <br>
-            ✨ 𝗟𝗔𝗨𝗡𝗖𝗛: 𝟭𝟭 𝗣𝗠 ✨ <br>
-            🏁 End: 3 AM 🏁 <br>
-            🌍 Nieuwe Kade 2 Arnhem 🌍 <br>
+            🎠 Party Date: TBA 🎠 <br>
+            🕤 Start: TBA 🕤 <br>
+            ✨ 𝗟𝗔𝗨𝗡𝗖𝗛: TBA ✨ <br>
+            🏁 End: TBA 🏁 <br>
+            🌍 TBA 🌍 <br>
             <br>
         <p>
             Name your own price for the ticket, starting at €0.
